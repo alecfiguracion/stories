@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common/style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <button id="clickPlay">
+                PLAY
+            </button>
+            <button id="clickSound" onclick="toggleSoundMute()">
+                MUTE
+            </button>
+            <div id="dropdown">
+                <button id="clickSortBy">SORT BY</button>
+                    <div class="dropdown-content">
+                        <a id="titleAZ" onclick="titleAZ()">TITLE [A-Z]</a>
+                        <a id="titleZA" onclick="titleZA()">TITLE [Z-A]</a>
+                        <a id="durationAsc" onclick="durationAsc()">DURATION [ASCENDING]</a>
+                        <a id="durationDesc" onclick="durationDesc()">DURATION [DESCENDING]</a>
+                        <a id="sizeAsc" onclick="sizeAsc()">SIZE [ASCENDING]</a>
+                        <a id="sizeDesc" onclick="sizeDesc()">SIZE [DESCENDING]</a>
+                        <a id="filmingDateAsc" onclick="filmingDateAsc()">DATE FILMED [ASCENDING]</a>
+                        <a id="filmingDateDesc" onclick="filmingDateDesc()">DATE FILMED [DESCENDING]</a>
+                        <a id="shuffleVideos" onclick="shuffleVideos()">SHUFFLE</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="startButtonContainer" onclick="startVideo()">
+            CLICK PLAY BUTTON TO BEGIN.<br>
+            WHAT STORIES ARE YOU ABLE TO GLEAN?
+        </div>
+        <div id="videoContainer">
+            <video id="videoPlayer" preload="auto" class="alecsVideo"></video>
+        </div>
+    </main>
+    <footer>
+        <div>
+            STORIES
+        </div>
+        <div>
+            <span onclick="openInfo();">DATABASE</span>
+            <div id="aboutDropdown">
+                <span id="about-content">ABOUT</span>
+                    <div class="about-content-dropdown">
+                        IN<a href="http://manovich.net/index.php/projects/database-as-a-symbolic-form" target="_blank">DATABASE AS A SYMBOLIC FORM</a>, LEV MANOVICH ARGUES THAT THE DATABASE, A STRUCTURED COLLECTION OF INFORMATION STORED IN A COMPUTER AND THE NARRATIVE ARE OPPOSITIONAL FORCES. THE FORMER, IN ITS PURE FORM IS UNORDERED, WHILE THE LATTER INHERENTLY IS — A SEQUENCE THAT TELLS A STORY.
+                        <br>
+                        <br>
+                        WHAT IS THE INTERSECTION BETWEEN THE DATABASE AND THE NARRATIVE?
+                        <br>
+                        <br>
+                        <i>STORIES</i> IS AN ATTEMPT TO LOOK INTO THE WEBSITE AS A WAY TO EXECUTE NARRATIVES THROUGH A CATALOG. USING BASIC SORTING WEBSITE FUNCTIONS, SUCH AS BY DURATION, BY ALPHABETIZATION OR EVEN BY FILE SIZE, THIS WORK AIMS TO PIECE TOGETHER SEEMINGLY DISPARATE FILMED MATERIALS INTO A SEQUENCE OF EVENTS; A NARRATIVE WITH A BEGINNING AND AN END.
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <div class="info">
+        <div onclick="closeInfo();" class="info-close">CLOSE</div>
+        <div class="database">
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/backyard_garden.mp4">
+                </video>
+                <p>backyard_garden</p>
+                <p>00.10.28</p>
+                <p>38.6 MB</p>
+                <p>2023-11-14T10:37:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/blinking_lights.mp4">
+                </video>
+                <p>blinking_lights</p>
+                <p>00:06.18</p>
+                <p>23.1 MB</p>
+                <p>2023-11-14T16:43:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/bouncing_ball.mp4">
+                </video>
+                <p>bouncing_ball</p>
+                <p>00:12.77</p>
+                <p>44.5 MB</p>
+                <p>2023-11-23T12:41:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/cctv_laundromat.mp4">
+                </video>
+                <p>cctv_laundromat</p>
+                <p>00:09.27</p>
+                <p>35 MB</p>
+                <p>2023-11-19T20:42:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/cutting_garlic.mp4">
+                </video>
+                <p>cutting_garlic</p>
+                <p>00:02.36</p>
+                <p>9 MB</p>
+                <p>2023-11-24T11:39:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/dinner_spread.mp4">
+                </video>
+                <p>dinner_spread</p>
+                <p>00:10.24</p>
+                <p>38.4 MB</p>
+                <p>2023-11-24T20:17:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/disturbed_water.mp4">
+                </video>
+                <p>disturbed_water</p>
+                <p>00:08.36</p>
+                <p>31.3 MB</p>
+                <p>2023-11-23T13:50:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/door_closing.mp4">
+                </video>
+                <p>door_closing</p>
+                <p>00:04.60</p>
+                <p>17.1 MB</p>
+                <p>2023-11-24T11:49:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/here_sign.mp4">
+                </video>
+                <p>here_sign</p>
+                <p>00:05.48</p>
+                <p>20.4 MB</p>
+                <p>2023-11-23T14:34:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/office_woman.mp4">
+                </video>
+                <p>office_woman</p>
+                <p>00:08.44</p>
+                <p>31.6 MB</p>
+                <p>2023-14-23T16:53:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/parking_lot.mp4">
+                </video>
+                <p>parking_lot</p>
+                <p>00:08.66</p>
+                <p>32.5 MB</p>
+                <p>2023-11-23T14:41:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/pen_clicking.mp4">
+                </video>
+                <p>pen_clicking</p>
+                <p>00:05.65</p>
+                <p>21.1 MB</p>
+                <p>2023-11-23T13:04:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/pizza_slice.mp4">
+                </video>
+                <p>pizza_slice</p>
+                <p>00:07.78</p>
+                <p>29.3 MB</p>
+                <p>2023-11-14T14:46:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/printing_paper.mp4">
+                </video>
+                <p>printing_paper</p>
+                <p>00:21.52</p>
+                <p>81.4 MB</p>
+                <p>2023-11-25T14:42:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/right_arrows.mp4">
+                </video>
+                <p>right_arrows</p>
+                <p>00:07.23</p>
+                <p>27.5 MB</p>
+                <p>2023-11-23T13:45:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/running_water.mp4">
+                </video>
+                <p>running_water</p>
+                <p>00:04.52</p>
+                <p>17.2 MB</p>
+                <p>2023-11-14T13:55:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/seeknok_river.mp4">
+                </video>
+                <p>seeknok_river</p>
+                <p>00:18.36</p>
+                <p>69.1 MB</p>
+                <p>2023-11-14T12:11:02</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/soccer_goal.mp4">
+                </video>
+                <p>soccer_goal</p>
+                <p>00:04.48</p>
+                <p>16.9 MB</p>
+                <p>2023-11-23T14:03:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/stop_light.mp4">
+                </video>
+                <p>stop_light</p>
+                <p>00:07.79</p>
+                <p>30 MB</p>
+                <p>2023-11-14T16:58:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/stop_sign.mp4">
+                </video>
+                <p>stop_sign</p>
+                <p>00:07.65</p>
+                <p>28.8 MB</p>
+                <p>2023-11-23T16:46:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/under_highway.mp4">
+                </video>
+                <p>under_highway</p>
+                <p>00:08.49</p>
+                <p>31.8 MB</p>
+                <p>2023-11-23T14:11:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/washing_machine.mp4">
+                </video>
+                <p>washing_machine</p>
+                <p>00:10.41</p>
+                <p>39.1 MB</p>
+                <p>2023-11-193T20:06:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/wearing_sweater.mp4">
+                </video>
+                <p>wearing_sweater</p>
+                <p>00:13.69</p>
+                <p>51.6 MB</p>
+                <p>2023-11-23T13:25:00</p>
+            </div>
+            <div>
+                <video controls class="info-video">
+                    <source src="assets/word_is.mp4">
+                </video>
+                <p>word_is</p>
+                <p>00:16.02</p>
+                <p>60.5 MB</p>
+                <p>2023-11-23T15:23:00</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script language="javascript" src="common/myscript.js"></script>
+<!-- <script src="https://player.vimeo.com/api/player.js"></script> -->
+</html>

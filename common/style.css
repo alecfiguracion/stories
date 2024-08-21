@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+@font-face {
+    font-family: 'Graisyr_Mono_Regular';
+    src: url(../assets/ABCGaisyrMono-Regular.otf)
+}
+
+@font-face {
+    font-family: 'Graisyr_Mono_Medium';
+    src: url(../assets/ABCGaisyrMono-Medium.otf)
+}
+
+@font-face {
+    font-family: 'IBMPlexMono-Regular';
+    src: url(../assets/IBMPlexMono-Regular.ttf)
+}
+
+.header {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+}
+
+#startButtonContainer {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Graisyr_Mono_Regular';
+    color: whitesmoke;
+    font-size: 17px;
+    text-align: center;
+}
+
+.clickPlayBegin {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBMPlexMono-Regular';
+    color: whitesmoke;
+}
+
+.alecsVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#clickPlay {
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Graisyr_Mono_Regular';
+    color: whitesmoke;
+    width: 100px;
+    border: 1.5px solid whitesmoke;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+#clickPlay:hover {
+    background-color: rgba(255,255,255,.3);
+    color: black;
+    border: 1.5px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#clickSound {
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Graisyr_Mono_Regular';
+    color: whitesmoke;
+    width: 100px;
+    border: 1.5px solid whitesmoke;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+#clickSound:hover {
+    background-color: rgba(255,255,255,.3);
+    color: black;
+    border: 1.5px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/*
+#clickAutoplay {
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Graisyr_Mono_Regular';
+    color: whitesmoke;
+    width: 100px;
+    border: 1.5px solid whitesmoke;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+#clickAutoplay:hover {
+    background-color: rgba(0,0,0,.6);
+}
+*/
+
+#clickSortBy {
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Graisyr_Mono_Regular';
+    color: whitesmoke;
+    width: 100px;
+    border: 1.5px solid whitesmoke;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+#clickSortBy:hover {
+    background-color: rgba(255,255,255,.3);
+    color: black;
+    border: 1.5px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin-top: 0px;
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,.3);
+    border: 1.5px solid whitesmoke;
+    border-radius: 8px;
+    min-width: 260px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 12px 6px 12px;
+    font-family: 'Graisyr_Mono_Regular';
+    font-size: 16px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255,255,255,.2);
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+}
+
+#dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#aboutDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.about-content-dropdown {
+    font-family: 'IBMPlexMono-Regular';
+    text-justify: inter-word;
+    font-size: 12.5px;
+    line-height: 19px;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 0%;
+    background-color: rgba(0,0,0,.3);
+    border: 1.5px solid whitesmoke;
+    border-radius: 8px;
+    min-width: 415px;
+    z-index: 1;
+}
+
+.about-content-dropdown a {
+    font-family: 'Graisyr_Mono_Regular';
+    font-size: 12.5px;
+    text-decoration: underline;
+    color: whitesmoke;
+    margin-left: 8px;
+}
+
+.dropdown-content a.selected {
+    font-family: 'Graisyr_Mono_Medium';
+    color: black;
+    background-color: rgba(255,255,255,.4);
+    border-radius: 8px;
+}
+
+#about-content:hover {
+    cursor: pointer;
+}
+
+#aboutDropdown:hover .about-content-dropdown {
+    display: block;
+}
+
+footer {
+    font-family: 'Graisyr_Mono_Regular';
+    font-size: 35px;
+    color: whitesmoke;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    padding: 0px;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+    margin: 20px;
+    z-index: 99;
+    width: 97.5%;
+}
+
+footer a {
+    margin-left: 50px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+span {
+    margin-left: 50px;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: 1.5px solid whitesmoke;
+    border-radius: 12px;
+    overflow-y: scroll;
+    display: none;
+    z-index: 99;
+    background-color: black;
+}
+
+.info-close {
+    font-family: 'Graisyr_Mono_Medium';
+    font-size: 16px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+
+.database {
+    display: grid;
+    margin: 20px 30px 30px 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 35px;
+    font-family: 'IBMPlexMono-Regular';
+    font-size: 12.5px;
+    color: whitesmoke;
+}
+
+.info-video {
+    position: static;
+    right: unset;
+    bottom: unset;
+    min-width: unset;
+    min-height: unset;
+    width: 100%;
+    height: auto;
+}
